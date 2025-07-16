@@ -88,9 +88,6 @@ class ClubMember:
                 items.append((new_key, v))
         return dict(items)
 
-    def __repr__(self):
-        return f"<ClubMember nick={self.nick} xp={self.xp}>"
-
 
 def export_members_to_csv(members: List[ClubMember], filename: str):
     df = pd.DataFrame([m.to_dict() for m in members])
@@ -119,6 +116,6 @@ if __name__ == "__main__":
         member.update_peak_rating(rating)
 
         print(f"[{i}/{len(members)}] Fetched stats for {member.nick}")
-        # time.sleep(0.2)
+        time.sleep(0.2)
 
     export_members_to_csv(members, "club_members_with_all_stats.csv")

@@ -1,11 +1,8 @@
 import os
 import requests
-from dotenv import load_dotenv
+import time
 from typing import List, Optional
 import pandas as pd
-import time
-
-load_dotenv()
 
 
 class GeoGuessrClubAPI:
